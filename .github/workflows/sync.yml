@@ -1,0 +1,64 @@
+name: Sync Dictionaries
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # 每天运行一次
+  workflow_dispatch: # 手动触发
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download latest zhwiki.dict.yaml
+        id: download_zhwiki
+        uses: robinraju/release-downloader@v1.10
+        with:
+          repository: "felixonmars/fcitx5-pinyin-zhwiki"
+          latest: true
+          fileName: "*.dict.yaml"
+          out-file-path: "."
+
+      - name: Use downloaded file name
+        run: echo ${{ fromJson(steps.download_zhwiki.outputs.downloaded_files)[0] }}
+
+      - name: Rename zhwiki.dict.yaml
+        run: mv ${{ fromJson(steps.download_zhwiki.outputs.downloaded_files)[0] }} zhwiki.dict.yaml
+
+      - name: Sync specific files from rime-ice
+        run: |
+          # 克隆 rime-ice 仓库
+          git clone https://github.com/iDvel/rime-ice.git
+          # 创建 dicts 目录，如果不存在
+          mkdir -p dicts
+          # 复制所需文件
+          cp rime-ice/cn_dicts/base.dict.yaml dicts/
+          cp rime-ice/cn_dicts/ext.dict.yaml dicts/
+          cp rime-ice/cn_dicts/tencent.dict.yaml dicts/
+          cp rime-ice/cn_dicts/others.dict.yaml dicts/
+          cp zhwiki.dict.yaml dicts/
+          # 删除克隆的仓库
+          rm -rf rime-ice
+          # 添加到 git
+          git add dicts/base.dict.yaml dicts/ext.dict.yaml dicts/tencent.dict.yaml dicts/others.dict.yaml dicts/zhwiki.dict.yaml
+
+      - name: Update version in swi.dict.yaml
+        run: |
+          sed -i "s/version: \"[0-9]\{8\}\"/version: \"$(date +%Y%m%d)\"/" swi.dict.yaml
+          git add swi.dict.yaml
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "devswi"
+          git config --global user.email "stayfocusjs@gmail.com"
+          git commit -m "Sync dicts"
+
+      - name: Push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
+        run: |
+          git remote set-url origin https://x-access-token:${{ secrets.PAT }}@github.com/devswi/rime-config.git
+          git push origin main

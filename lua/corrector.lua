@@ -17,8 +17,8 @@ function M.init(env)
     local config = env.engine.schema.config
     env.keep_comment = config:get_bool('translator/keep_comments')
     local delimiter = config:get_string('speller/delimiter')
-    if delimiter and #delimiter > 0 and delimiter:sub(1,1) ~= ' ' then
-        env.delimiter = delimiter:sub(1,1)
+    if delimiter and #delimiter > 0 and delimiter:sub(1, 1) ~= ' ' then
+        env.delimiter = delimiter:sub(1, 1)
     end
     env.name_space = env.name_space:gsub('^*', '')
     M.style = config:get_string(env.name_space) or '{comment}'
@@ -75,7 +75,7 @@ function M.init(env)
         ["tiao huan"] = { text = "调换", comment = "diào huàn" },
         ["tai xing shan"] = { text = "太行山", comment = "tài háng shān" },
         ["jie si di li"] = { text = "歇斯底里", comment = "xiē sī dǐ lǐ" },
-        ["fa xiao"] = { text = "发酵", comment = "fā jiào" }, 
+        ["fa xiao"] = { text = "发酵", comment = "fā jiào" },
         ["xiao mu jun"] = { text = "酵母菌", comment = "jiào mǔ jūn" },
         ["yin hong"] = { text = "殷红", comment = "yān hóng" },
         ["nuan he"] = { text = "暖和", comment = "nuǎn huo" },
@@ -172,7 +172,7 @@ function M.func(input, env)
         if pinyin and #pinyin > 0 then
             local correction_pinyin = pinyin
             if env.delimiter then
-                correction_pinyin = correction_pinyin:gsub(env.delimiter,' ')
+                correction_pinyin = correction_pinyin:gsub(env.delimiter, ' ')
             end
             local c = M.corrections[correction_pinyin]
             if c and cand.text == c.text then
