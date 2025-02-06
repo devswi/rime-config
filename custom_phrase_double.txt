@@ -33,21 +33,6 @@ Rime	rime	3
 又又又	uuu
 又双叒叕	uuuu
 
-go	go
-Golang	golang
-Hugo	hugo
-goto	goto
-domain	domain
-TODO	todo
-Dota	dota
-main	main
-Amazon	amazon
-NASA	nasa
-gone	gone
-Go程	gocheng
-code	code
-SOHO	soho
-
 Android	android
 Apple	apple
 Apple ID	appleid
