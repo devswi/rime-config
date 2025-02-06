@@ -35,15 +35,17 @@ jobs:
           # 创建 dicts 目录，如果不存在
           mkdir -p dicts
           # 复制所需文件
+          cp rime-ice/cn_dicts/8105.dict.yaml dicts/
           cp rime-ice/cn_dicts/base.dict.yaml dicts/
           cp rime-ice/cn_dicts/ext.dict.yaml dicts/
           cp rime-ice/cn_dicts/tencent.dict.yaml dicts/
           cp rime-ice/cn_dicts/others.dict.yaml dicts/
+          cp rime-ice/en_dicts/cn_en_flypy.txt dicts/
           cp zhwiki.dict.yaml dicts/
           # 删除克隆的仓库
           rm -rf rime-ice
           # 添加到 git
-          git add dicts/base.dict.yaml dicts/ext.dict.yaml dicts/tencent.dict.yaml dicts/others.dict.yaml dicts/zhwiki.dict.yaml
+          git add dicts/8105.dict.yaml dicts/base.dict.yaml dicts/ext.dict.yaml dicts/tencent.dict.yaml dicts/others.dict.yaml dicts/cn_en_flypy.txt dicts/zhwiki.dict.yaml
 
       - name: Update version in swi.dict.yaml
         run: |
