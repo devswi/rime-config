@@ -38,10 +38,11 @@ style:
   # Whether to use a translucent background. Only visible when background color is transparent
   translucency: false
 
-  corner_radius: 7
+  corner_radius: 10
   hilited_corner_radius: 0
-  border_height: -2
   border_width: 0
+  border_height: 0
+
   # Space between candidates in stacked layout
   line_spacing: 5
   # Space between preedit and candidates in non-inline mode
@@ -57,12 +58,11 @@ style:
   # and %c is replaced by "[label]"
   candidate_format: '[label]. [candidate] [comment]'  # 候选项格式化
 
-  font_face: "LXGWWenKai-Regular"                   # 字体及大小
-  font_point: 18
-  # label_font_face: "LXGWWenKai-Regular, Helvetica"    # 序号字体及大小
-  label_font_point: 12
-  # comment_font_face: "LXGWWenKai-Regular, Helvetica"  # 注字体及大小
-  comment_font_point: 16
+  font_face: "SourceHanSans"                   # 字体及大小
+  font_point: 16
+  label_font_face: "SourceHanSans"    # 序号字体及大小
+  label_font_point: 13
+  comment_font_face: "SourceHanSans"  # 注字体及大小
 
 # 皮肤列表
 preset_color_schemes:
@@ -107,7 +107,7 @@ preset_color_schemes:
     name: "高仿微信输入法"
     author: "Lufs X <i@isteed.cc>"
     text_orientation: horizontal
-    border_height: -2                        # 外边框 高
+    border_height: 0                        # 外边框 高
     border_width: 0                          # 外边框 宽
     corner_radius: 10                        # 外边框 圆角半径
     hilited_corner_radius: 0                 # 选中框 圆角半径
@@ -130,7 +130,7 @@ preset_color_schemes:
     name: "高仿暗色微信输入法"
     author: "Lufs X <i@isteed.cc>"
     text_orientation: horizontal
-    border_height: -2                        # 外边框 高
+    border_height: 0                        # 外边框 高
     border_width: 0                         # 外边框 宽
     corner_radius: 10                       # 外边框 圆角半径
     hilited_corner_radius: 0                # 选中框 圆角半径
