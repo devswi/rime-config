@@ -10,4 +10,5 @@ import_tables:
   - dicts/ext      # 扩展词库
   - dicts/tencent  # 腾讯词向量（大词库，部署时间较长）
   - dicts/others   # 一些杂项
+  - dicts/zhwiki
 ...
