@@ -21,8 +21,8 @@ app_options:
 
 style:
   # 选择皮肤，亮色与暗色主题
-  color_scheme: we_chat
-  color_scheme_dark: we_chat_dark
+  color_scheme: sea
+  color_scheme_dark: sea_dark
 
   # 候选框与文字的排列方式
   candidate_list_layout: linear  # stacked | linear       皮肤横竖排显示是调整这个
@@ -58,11 +58,11 @@ style:
   # and %c is replaced by "[label]"
   candidate_format: '[label]. [candidate] [comment]'  # 候选项格式化
 
-  font_face: "SourceHanSans"                   # 字体及大小
+  font_face: "LXGWWenKai-Regular"                   # 字体及大小
   font_point: 16
-  label_font_face: "SourceHanSans"    # 序号字体及大小
+  label_font_face: "LXGWWenKai-Regular"    # 序号字体及大小
   label_font_point: 13
-  comment_font_face: "SourceHanSans"  # 注字体及大小
+  comment_font_face: "LXGWWenKai-Regular"  # 注字体及大小
 
 # 皮肤列表
 preset_color_schemes:
@@ -148,3 +148,47 @@ preset_color_schemes:
     hilited_candidate_label_color: 0xFFFFFF
     text_color: 0xFFFFFF
     hilited_text_color: 0x777777
+
+  sea:
+    name: "海"
+    author: "swi <stayfocusjs@gmail.com>"
+    text_orientation: horizontal
+    corner_radius: 8
+    hilited_corner_radius: 0
+    border_height: -1
+    border_width: 2
+    line_spacing: 1
+    color_space: display_p3
+    back_color: 0xFFFFFF
+    border_color: 0xFFFFFF
+    candidate_text_color: 0xD8000000
+    comment_text_color: 0x3F000000
+    label_color: 0x7F7F7F
+    text_color: 0x3F000000
+    hilited_candidate_back_color: 0xFDF0E8
+    hilited_candidate_text_color: 0xE56E44
+    hilited_comment_text_color: 0xF2BDA7
+    hilited_candidate_label_color: 0xE56E44
+    hilited_text_color: 0xD8000000
+
+  sea_dark:
+    name: "海"
+    author: "swi <stayfocusjs@gmail.com>"
+    text_orientation: horizontal
+    corner_radius: 8
+    hilited_corner_radius: 0
+    border_height: -1
+    border_width: 2
+    line_spacing: 1
+    color_space: display_p3
+    back_color: 0x151515
+    border_color: 0x151515
+    candidate_text_color: 0xFFFFFF
+    comment_text_color: 0x6E7474 #74746e
+    label_color: 0x999999
+    text_color: 0xFFFFFF
+    hilited_candidate_back_color: 0xF5814F
+    hilited_candidate_text_color: 0xFFFFFF
+    hilited_comment_text_color: 0x5FFFFFFF
+    hilited_candidate_label_color: 0xFFFFFF
+    hilited_text_color: 0xFFFFFF

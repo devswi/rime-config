@@ -1,6 +1,8 @@
 # Rime 配置
 
-![config](./extra/config.png)
+![sea](./extra/sea.png)
+
+![sea-dark](./extra/sea_dark.png)
 
 配置文件来源[雾凇拼音](https://github.com/iDvel/rime-ice)
 
