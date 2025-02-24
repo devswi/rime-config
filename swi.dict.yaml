@@ -3,7 +3,7 @@
 
 ---
 name: swi
-version: "2025-02-23"
+version: "2025-02-24"
 import_tables:
   - dicts/8105     # 字表
   - dicts/base     # 基础词库
