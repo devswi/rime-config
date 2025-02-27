@@ -44,14 +44,6 @@ jobs:
           cp zhwiki.dict.yaml dicts/
           # 删除克隆的仓库
           rm -rf rime-ice
-          # 检测字典是否有变更
-          git status --porcelain > result.txt
-          if [ -s result.txt ]; then
-            echo "There are changes, keep going."
-          else
-            echo "No changes detected, skip"
-            exit 0
-          fi
           # 添加到 git
           git add dicts/8105.dict.yaml dicts/base.dict.yaml dicts/ext.dict.yaml dicts/tencent.dict.yaml dicts/others.dict.yaml dicts/cn_en_flypy.txt dicts/zhwiki.dict.yaml
 
