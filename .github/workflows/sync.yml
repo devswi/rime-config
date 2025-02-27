@@ -46,7 +46,7 @@ jobs:
           rm -rf rime-ice
           # 检测字典是否有变更
           git status --porcelain > result.txt
-          if [ -s result.txt ] then
+          if [ -s result.txt ]; then
             echo "There are changes, keep going."
           else
             echo "No changes detected, skip"
